@@ -11,79 +11,111 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <libc.h>
+#include <stdlib.h>
 #include "libft.h"
 
-static int	count_words(char const *s, char c)
+static size_t	ft_count_words(const char *s, char c)
 {
-	int	count_word;
-	int	inside_word;
+	size_t	count;
 
-	count_word = 0;
-	inside_word = 0;
+	count = 0;
 	while (*s)
 	{
-		if (*s != c && !inside_word)
+		if (*s == c)
 		{
-			inside_word = 1;
-			count_word++;
+			while (*s == c)
+				s++;
 		}
-		else if (*s == c)
+		else
 		{
-			inside_word = 0;
+			count++;
+			while (*s && *s != c)
+				s++;
 		}
-		s++;
 	}
-	return (count_word);
+	return (count);
 }
 
-static char	*copy_word(const char *s, char c)
+static char	*ft_next_word(const char **s, char c)
 {
-	int		len;
-	char	*word;
+	const char	*start;
+	const char	*end;
+	char		*word;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	word = ft_strdup(s);
+	start = *s;
+	while (*start && *start == c)
+		start++;
+	end = start;
+	while (*end && *end != c)
+		end++;
+	word = ft_substr(start, 0, end - start);
 	if (!word)
 		return (NULL);
-	word[len] = '\0';
+	*s = end;
 	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		count;
 	char	**result;
-	int		i;
+	size_t	i;
+	size_t	word_count;
 
-	count = count_words(s, c);
-	if (count == 0)
+	if (!s)
 		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (count + 1));
+	word_count = ft_count_words(s, c);
+	result = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
-	while (*s)
+	while (i < word_count)
 	{
-		if (*s != c)
+		result[i] = ft_next_word(&s, c);
+		if (!result[i])
 		{
-			result[i] = copy_word(s, c);
-			if (!result[i])
-			{
-				while (i > 0)
-					free(result[--i]);
-				free(result);
-				return (NULL);
-			}
-			while (*s && *s != c)
-				s++;
-			i++;
+			while (i > 0)
+				free(result[--i]);
+			free(result);
+			return (NULL);
 		}
-		else
-			s++;
+		i++;
 	}
 	result[i] = NULL;
 	return (result);
 }
+
+/*int	main(void)
+{
+	char const *s = "   Hello World, This is a Test  ";
+	char **words = ft_split(s, ' ');
+
+	if (words) {
+        // Imprime las palabras divididas
+	size_t	i = 0;
+	while (words[i] != NULL)
+	{
+		printf("Word %zu: %s\n", i, words[i]);
+		free(words[i]); // Liberamos la memoria de cada palabra
+		i++;
+	}
+	free(words); // Liberamos la memoria del arreglo de palabras
+	}
+	else
+	{
+	printf("Error: No se pudo dividir la cadena\n");
+	}
+	return (0);
+}*
+
+/* La función ft_split toma una cadena de caracteres (s) y un carácter
+delimitador (c) como entrada. Divide la cadena en palabras separadas por el
+delimitador y devuelve un arreglo de punteros a caracteres, donde cada puntero
+apunta a una palabra.
+La función cuenta inicialmente el número de palabras en la cadena utilizando
+ft_count_words, luego asigna memoria para un arreglo de punteros a caracteres.
+Luego, utiliza un bucle para llamar a ft_next_word para cada palabra,
+almacenando cada palabra en una entrada del arreglo. Si ocurre un error durante
+la asignación de memoria para una palabra, la función libera la memoria asignada
+previamente antes de devolver NULL.
+En resumen, ft_split divide una cadena en palabras utilizando un carácter
+delimitador y devuelve un arreglo de punteros a estas palabras.*/
