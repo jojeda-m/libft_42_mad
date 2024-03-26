@@ -90,3 +90,13 @@ char	*ft_itoa(int n)
     
     return 0;
 }*/
+
+/*El comportamiento de la función ft_itoa es el siguiente:
+Toma un entero n como entrada y devuelve una cadena de caracteres que representa
+ese entero. Calcula la longitud necesaria para almacenar el entero convertido en
+cadena, considerando el signo. Asigna memoria dinámica para almacenar la cadena
+resultante. Maneja casos especiales como cuando n es igual a 0 o igual a
+-2147483648. Si n es negativo, coloca el signo negativo en la primera posición
+de la cadena resultante. Convierte el entero en su valor absoluto y lo convierte
+en una cadena de caracteres, dígito por dígito. Devuelve la cadena resultante
+que representa el entero n.*/
