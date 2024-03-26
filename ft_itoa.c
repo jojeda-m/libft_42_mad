@@ -10,4 +10,83 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
 
+static int	ft_absolut_value(int n)
+{
+	if (n == -2147483648)
+		return (-1);
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
+}
+
+static int	ft_length(int n)
+{
+	int	length;
+
+	length = 0;
+	if (n == 0)
+		length = 1;
+	n = ft_absolut_value(n);
+	while (n > 0)
+	{
+		length++;
+		n /= 10;
+	}
+	return (length);
+}
+
+char	*ft_itoa(int n)
+{
+	int		length;
+	char	*result;
+
+	if (n < 0)
+		length = ft_length(n) + 1;
+	else
+		length = ft_length(n);
+	result = (char *)malloc((length + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n < 0)
+		result[0] = '-';
+	n = ft_absolut_value(n);
+	while (n != 0)
+	{
+		result[length - 1] = n % 10 + '0';
+		length--;
+		n /= 10;
+	}
+	return (result);
+}
+
+/*int main(void)
+{
+    int n = -2147483647;
+    int abs_val = ft_absolut_value(n);
+    int length = ft_length(n);
+    char *result = ft_itoa(n);
+
+    printf("El valor absoluto de n es: %d\n", abs_val);
+    printf("La longitud de la cadena es: %d\n", length);
+    
+    if (result != NULL)
+    {
+        printf("El valor convertido es: %s\n", result);
+        free(result);
+    }
+    else
+    {
+        fprintf(stderr, "Error: No se pudo convertir el número.\n");
+    }
+    
+    return 0;
+}*/
