@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-static char	ft_example(unsigned int i, char c)
+/*static char	ft_example(unsigned int i, char c)
 {
 	if (i % 2 != 0)
 	{
@@ -27,7 +25,7 @@ static char	ft_example(unsigned int i, char c)
 			return (c + ('a' - 'A'));
 	}
 	return (c);
-}
+}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
