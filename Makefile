@@ -1,26 +1,26 @@
-NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
-SRC_DIR = /Users/jojeda-m/Desktop/libft
-SRC = $(shell find $(SRC_DIR) -type f -name "*.c")
-OBJ = $(SRC:.c=.o)
-INCLUDE = libft.h
+NAME	= libft.a
+CC	= gcc
+CFLAGS	= -Wall -Werror -Wextra
+SRC_DIR	= /Users/Jhonatan/Desktop/42_madrid/libft_42_mad
+SRC	= $(shell find $(SRC_DIR) -type f -name "*.c")
+OBJ	= $(SRC:.c=.o)
+INCLUDE	= libft.h
 
-all: $(NAME)
+all : $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME) : $(OBJ) $(INCLUDE)
 	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
+%.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
+clean :
 	rm -f $(OBJ)
 
-fclean: clean
+fclean : clean
 	rm -f $(NAME)
 
-re: fclean all
+re : fclean all
 
 .PHONY: all clean fclean re
 

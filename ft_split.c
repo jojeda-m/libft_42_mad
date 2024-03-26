@@ -105,7 +105,7 @@ char	**ft_split(char const *s, char c)
 	printf("Error: No se pudo dividir la cadena\n");
 	}
 	return (0);
-}*
+}*/
 
 /* La función ft_split toma una cadena de caracteres (s) y un carácter
 delimitador (c) como entrada. Divide la cadena en palabras separadas por el
