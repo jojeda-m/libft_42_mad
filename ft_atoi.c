@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:08:01 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/21 11:06:18 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/03/27 13:39:28 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_atoi(const char *str)
 	printf("Cadena: \"%s\", Entero: %d\n", str3, ft_atoi(str3));
 	printf("Cadena: \"%s\", Entero: %d\n", str4, ft_atoi(str4));
 	return (0);
-}*/
+}
 
 /*La función ft_atoi en C (ASCII to Integer) convierte una cadena de
 caracteres que representa un número en su forma ASCII a un valor entero*/

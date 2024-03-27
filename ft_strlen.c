@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:55:14 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/21 10:29:02 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/03/27 13:52:24 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ size_t	ft_strlen(const char *s)
     return (0);
 }*/
 
-/* la función ft_strlen cuenta la cantidad de caracteres en la cadena s hasta 
+/*La función ft_strlen cuenta la cantidad de caracteres en la cadena s hasta 
 encontrar el carácter nulo final y devuelve este valor como la longitud 
 de la cadena.*/
