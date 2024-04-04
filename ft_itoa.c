@@ -6,30 +6,24 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:13:53 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:44:52 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/04 20:15:53 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_absolut_value(int n)
-{
-	if (n == -2147483648)
-		return (-1);
-	if (n < 0)
-		return (-n);
-	else
-		return (n);
-}
 
 static int	ft_length(int n)
 {
 	int	length;
 
 	length = 0;
-	if (n == 0)
+	if (n == INT_MIN)
+		return (11);
+	if (n <= 0)
+	{
 		length = 1;
-	n = ft_absolut_value(n);
+		n = -n;
+	}
 	while (n > 0)
 	{
 		length++;
@@ -42,25 +36,25 @@ char	*ft_itoa(int n)
 {
 	int		length;
 	char	*result;
+	int		i;
 
-	if (n < 0)
-		length = ft_length(n) + 1;
-	else
-		length = ft_length(n);
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	length = ft_length(n);
 	result = (char *)malloc((length + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	i = 0;
 	if (n < 0)
-		result[0] = '-';
-	n = ft_absolut_value(n);
+	{
+		result[i++] = '-';
+		n = -n;
+	}
 	while (n != 0)
 	{
-		result[length - 1] = n % 10 + '0';
-		length--;
+		result[--length] = n % 10 + '0';
 		n /= 10;
 	}
 	return (result);
@@ -69,11 +63,9 @@ char	*ft_itoa(int n)
 /*int main(void)
 {
     int n = -2147483647;
-    int abs_val = ft_absolut_value(n);
     int length = ft_length(n);
     char *result = ft_itoa(n);
 
-    printf("El valor absoluto de n es: %d\n", abs_val);
     printf("La longitud de la cadena es: %d\n", length);
     
     if (result != NULL)
@@ -85,8 +77,7 @@ char	*ft_itoa(int n)
     {
         fprintf(stderr, "Error: No se pudo convertir el número.\n");
     }
-    
-    return 0;
+    return (0);
 }*/
 
 /*El comportamiento de la función ft_itoa es el siguiente:
