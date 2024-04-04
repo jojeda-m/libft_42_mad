@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:08:01 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/02 13:34:41 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:21:41 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(const char *str)
 
 /*int	main(void) 
 {
-	const	char *str1 = "12345";
+	const	char *str1 = "--123";
 	const	char *str2 = "-67890";
 	const	char *str3 = "     --+++--+-++73654684321354312354522bckb6763";
 	const	char *str4 = "abc123"; 

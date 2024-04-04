@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 12:00:27 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:51:51 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/04 11:55:55 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	copied_len;
+	size_t	src_len;
+	size_t	dst_len;
 
-	if (*src == '\0')
-	{
-		*dst = '\0';
-		return (ft_strlen(src));
-	}
+	src_len = ft_strlen(src);
+	dst_len = dstsize - 1;
 	if (dstsize == 0)
-		return (ft_strlen(src));
-	copied_len = 0;
-	while (dstsize > 1 && *src != '\0')
+		return (src_len);
+	while (*src != '\0' && dst_len > 0)
 	{
 		*dst = *src;
-		dstsize--;
 		src++;
 		dst++;
-		copied_len++;
+		dst_len--;
 	}
 	*dst = '\0';
-	return (copied_len);
+	return (src_len);
 }
 
 /*int	main(void)
