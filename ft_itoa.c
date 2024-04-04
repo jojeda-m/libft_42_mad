@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:13:53 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/04 20:15:53 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/04 21:17:04 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ static int	ft_length(int n)
 	if (n == INT_MIN)
 		return (11);
 	if (n <= 0)
-	{
-		length = 1;
-		n = -n;
-	}
-	while (n > 0)
+		length++;
+	while (n != 0)
 	{
 		length++;
 		n /= 10;
@@ -36,7 +33,6 @@ char	*ft_itoa(int n)
 {
 	int		length;
 	char	*result;
-	int		i;
 
 	if (n == 0)
 		return (ft_strdup("0"));
@@ -46,10 +42,10 @@ char	*ft_itoa(int n)
 	result = (char *)malloc((length + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
-	i = 0;
+	result[length] = '\0';
 	if (n < 0)
 	{
-		result[i++] = '-';
+		result[0] = '-';
 		n = -n;
 	}
 	while (n != 0)
