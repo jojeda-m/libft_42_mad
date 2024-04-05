@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:24:39 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:54:11 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/05 02:46:19 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*last;
+	char	ch;
 
-	while (*s != '\0')
+	ch = (char)c;
+	last = NULL;
+	if (ch == '\0')
+		return ((char *)s + ft_strlen(s));
+	while (*s)
 	{
-		if (*s == c)
-			last = ((char *)s);
+		if (*s == ch)
+		{
+			last = (char *)s;
+		}
 		s++;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (last);
 }
 
