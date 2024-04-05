@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:46:20 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:50:15 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/05 02:40:30 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 char	*ft_strdup(const char *s1)
 {
-	size_t	size_s1;
+	size_t	i;
 	char	*dup;
-	char	*dup_ini;
+	size_t	len;
 
-	if (s1 == NULL)
-		return (NULL);
-	size_s1 = ft_strlen(s1);
-	dup = malloc(size_s1 + 1);
-	dup_ini = dup;
-	if (dup == NULL)
-		return (NULL);
-	while (*s1 != '\0')
+	dup = NULL;
+	len = ft_strlen((char *)s1);
+	dup = (char *)malloc(len + 1);
+	if (dup)
 	{
-		*dup = *s1;
-		dup++;
-		s1++;
+		i = 0;
+		while (s1[i] != '\0')
+		{
+			dup[i] = s1[i];
+			i++;
+		}
+		dup[i] = '\0';
 	}
-	*dup = '\0';
-	return (dup_ini);
+	return (dup);
 }
 
 /*int	main(void)

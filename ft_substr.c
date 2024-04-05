@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:03:13 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:55:06 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/05 02:47:27 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,17 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*sub;
+	char	*result;
 
-	i = 0;
-	while (i < start && s[i] != '\0')
-		i++;
-	sub = malloc(len + 1);
-	if (sub == NULL)
+	if (start > ft_strlen(s) || s == NULL)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	result = malloc(len + 1);
+	if (!result)
 		return (NULL);
-	j = 0;
-	while (j < len && s[i] != '\0')
-	{
-		sub[j] = s[i];
-		j++;
-		i++;
-	}
-	sub[j] = '\0';
-	return (sub);
+	ft_strlcpy(result, &s[start], len + 1);
+	return (result);
 }
 
 /*int	main(void)
@@ -57,4 +49,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /*La funcion ft_substr, reserva (con malloc(3)) y devuelve una substring
 de la string ’s’.La substring empieza desde el índice ’start’ y tiene 
-una longitud máxima ’len’.*/
+una longitud máxima ’len’. Si start es mayor que la longitud de s, o s apunta a
+NULL, la funcion devuelve un puntero a una cadena vacia*/

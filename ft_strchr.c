@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:56:46 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:49:51 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/05 02:39:53 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,42 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*ocurrence;
+	char	ch;
 
-	ocurrence = (char *)s;
-	while (*s != '\0')
+	ch = (char)c;
+	while (*s)
 	{
-		if (*s == c)
-			return (ocurrence);
+		if (*s == ch)
+			return ((char *)s);
 		s++;
-		ocurrence++;
 	}
-	if (c == '\0')
-		return (ocurrence);
+	if (ch == '\0')
+		return ((char *)s);
 	return (NULL);
 }
 
 /*int	main(void)
 {
 	const char *str = "Hello, world!";
-	char character_to_find = 'o';
+	char character_to_find = 'H';
 
 	// Buscar la primera ocurrencia del carácter en la cadena
 	char *result = ft_strchr(str, character_to_find);
 
 	if (result != NULL)
 	{
-		printf("El carácter '%c' se encontró en la posición %ld de la 
-				cadena.\n",character_to_find, result - str);
+		printf("El carácter '%c' se encontró en la posición %ld
+				de la cadena.\n",character_to_find, result - str);
 	}
 	else
 	{
-		printf("El carácter '%c' no se encontró en la cadena.\n", 
+		printf("El carácter '%c' no se encontró en la cadena.\n",
 				character_to_find);
 	}
 	return (0);
 }*/
 
 /*La función ft_strchr proporciona una implementación de la función strchr que
-busca la primera ocurrencia de un carácter en una cadena de caracteres y devuelve
-un puntero a la posición donde se encuentra ese carácter. Si el carácter no
-se encuentra, devuelve NULL.*/
+busca la primera ocurrencia de un carácter en una cadena de caracteres y
+devuelve un puntero a la posición donde se encuentra ese carácter. 
+Si el carácter no se encuentra, devuelve NULL.*/
