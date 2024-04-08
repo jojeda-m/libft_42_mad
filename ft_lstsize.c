@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:47:51 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/02 13:10:49 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:37:30 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@ int	ft_lstsize(t_list *lst)
 	int	lst_size;
 
 	lst_size = 0;
-	if (*lst)
-		lst_size = 1;
-	while (*lst)
+	while (lst)
 	{
 		lst_size++;
 		lst = lst -> next;
 	}
-	return (lst_size)
+	return (lst_size);
 }
 
-int	main(void)
+/*int	main(void)
 {
 // Creamos los nodos utilizando ft_lstnew y les asignamos un valor de ejemplo
 	t_list *disco1 = ft_lstnew("Thriller");
@@ -40,8 +38,10 @@ int	main(void)
 	disco2->next = disco3;
 	disco3->next = disco4;
 
-	printf("La lista tiene: %d discos\n", ft_lstsize(t_list));
+	printf("La lista tiene: %d discos\n", ft_lstsize(disco1));
 
 	return (0);
-}
+}*/
 
+/* La función ft_lstsize recibe como parametro una lista, y retorna un entero
+que representa el número de noodos que contiene dicha lista*/

@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:54:09 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/02 12:26:18 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:02:28 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main(void)
     disco2->next = disco3;
     disco3->next = disco4;
 
-    // Llamamos a la función print_list para imprimir la lista completa de discos
+    // Llamada a la función print_list para imprimir la lista completa de discos
     print_list(disco1);
 
     // Liberamos la memoria de los nodos

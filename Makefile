@@ -6,7 +6,7 @@
 #    By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 15:22:13 by jojeda-m          #+#    #+#              #
-#    Updated: 2024/03/27 15:59:54 by jojeda-m         ###   ########.fr        #
+#    Updated: 2024/04/08 14:37:20 by jojeda-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,20 +52,33 @@ SRC		= \
 
 OBJ		= $(SRC:.c=.o)
 
+BONUS	= \
+		  ft_lstnew.c\
+		  ft_lstadd_front.c\
+		  ft_lstsize.c\
+		  ft_lstlast.c\
+		  ft_lstadd_back.c\
+		  ft_lstdelone.c
+
+B_OBJ	= $(BONUS:.c=.o)
+
 all 	: $(NAME)
 
 $(NAME) : $(OBJ) $(INCLUDE)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+
+bonus: $(B_OBJ)
+	@ar -crs $(NAME) $(B_OBJ)
 
 %.o		: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean	:
-	rm -f $(OBJ)
+	@rm -f $(OBJ) $(B_OBJ)
 
-fclean	:
-	rm -f $(NAME)
+fclean	: clean
+	@rm -f $(NAME)
 
-re		: clean fclean all
+re		: fclean all
 
 .PHONY	: all clean fclean re
