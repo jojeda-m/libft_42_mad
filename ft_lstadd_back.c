@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 12:11:55 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/08 12:57:26 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:34:11 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	last = ft_lstlast(*lst);
-	last -> next = new;
+	if (*lst)
+	{
+		last = ft_lstlast(*lst);
+		last -> next = new;
+	}
+	else
+		*lst = new;
 }
 
 /*int main(void)

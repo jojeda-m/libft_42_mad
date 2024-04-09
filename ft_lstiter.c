@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 13:15:13 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 11:40:51 by jojeda-m         ###   ########.fr       */
+/*   Created: 2024/04/09 10:30:55 by jojeda-m          #+#    #+#             */
+/*   Updated: 2024/04/09 10:39:57 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	write(fd, &c, 1);
+	if (lst && f)
+	{
+		while (lst)
+		{
+			f(lst->content);
+			lst = lst -> next;
+		}
+	}
 }
-
-/*int	main(void)
-{
-	char	c;
-	int		out;
-
-	c = 'J';
-	out = 1;
-	ft_putchar_fd(c, out);
-	return (0);
-}*/
-
-/*La función ft_putchar_fd permite escribir un solo carácter en un descriptor de
-archivo especificado. En el código proporcionado, se usa para escribir el
-carácter 'J' en la salida estándar (stdout) 1 (Pantalla)*/

@@ -6,7 +6,7 @@
 #    By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 15:22:13 by jojeda-m          #+#    #+#              #
-#    Updated: 2024/04/08 14:37:20 by jojeda-m         ###   ########.fr        #
+#    Updated: 2024/04/09 10:43:22 by jojeda-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,10 @@ BONUS	= \
 		  ft_lstsize.c\
 		  ft_lstlast.c\
 		  ft_lstadd_back.c\
-		  ft_lstdelone.c
+		  ft_lstdelone.c\
+		  ft_lstclear.c\
+		  ft_lstiter.c\
+		  ft_lstmap.c
 
 B_OBJ	= $(BONUS:.c=.o)
 
