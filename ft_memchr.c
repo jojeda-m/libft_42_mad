@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 19:32:20 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:45:21 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:56:31 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,19 @@ void	*ft_memchr(const void *s, int c, size_t n)
 }
 
 /*int	main(void)
-{	char str[] = "Hello, world!";
-	int search_char = 'w';
-	size_t search_size = ft_strlen(str);
-	void *result_ft = ft_memchr(str, search_char, search_size);
-	if (result_ft != NULL)
+{	char	*str;
+	int		search_char;
+	size_t	search_size;
+	void	*result;
+	
+	str = "Hello, world!";
+	search_char = 'w';
+	search_size = ft_strlen(str);
+	result = ft_memchr(str, search_char, search_size);
+	if (result != NULL)
 	{
 		printf("El caracter '%c' encontrado en la dirección de memoria: %p\n"
-		, search_char, result_ft);
+		, search_char, result);
 	}
 	else
 	{

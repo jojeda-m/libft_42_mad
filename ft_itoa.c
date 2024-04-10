@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:13:53 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/05 08:06:38 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:56:34 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static int	ft_length(int n)
 	int	length;
 
 	length = 0;
-	if (n == INT_MIN)
-		return (11);
 	if (n <= 0)
 		length++;
 	while (n != 0)
@@ -58,7 +56,7 @@ char	*ft_itoa(int n)
 
 /*int main(void)
 {
-    int n = -2147483647;
+    int n = INT_MIN;
     int length = ft_length(n);
     char *result = ft_itoa(n);
 

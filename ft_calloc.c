@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:52:35 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:41:50 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:20:45 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	total_size;
 	void	*ptr;
 	char	*ini_ptr;
 	char	*end_ptr;
 
-	total_size = count * size;
-	ptr = malloc(total_size);
+	ptr = malloc(count * size);
 	if (ptr != NULL)
 	{
 		ini_ptr = (char *)ptr;
-		end_ptr = ini_ptr + total_size;
+		end_ptr = ini_ptr + (count * size);
 		while (ini_ptr < end_ptr)
 		{
 			*ini_ptr = 0;
@@ -36,25 +34,52 @@ void	*ft_calloc(size_t count, size_t size)
 
 /*int	main(void)
 {
-	size_t num_elements = 5;
-	size_t element_size = sizeof(int);
-	
-	int *array = (int *)ft_calloc(num_elements, element_size);
-	if (array != NULL)
+	size_t	num_elements;
+	size_t	ch_ele_size;
+	size_t	nb_ele_size;
+	int		*int_array;
+	char	*char_array;
+	size_t	i;
+
+	num_elements = 5;
+	nb_ele_size = sizeof(int);
+	ch_ele_size = sizeof(char);
+	int_array = (int *)ft_calloc(num_elements, nb_ele_size);
+	if (int_array != NULL)
 	{
-		// Imprimir los elementos del array
-		printf("Array después de ft_calloc:\n");
-		for (size_t i = 0; i < num_elements; i++)
+		i = 0;
+		// Imprimir los elementos del array de números
+		printf("Array de numeros después de ft_calloc:\n");
+		while (i < num_elements)
 		{
-			printf("%d ", array[i]);
+			printf("%d ", int_array[i]);
+			i++;
 		}
 		printf("\n");
 		
 		// Liberar la memoria asignada
-		free(array);
+		free(int_array);
 	} else
-	{
 		printf("Error: la asignación de memoria ha fallado.\n");
+	
+	// Imprimir los elementos del array de caracteres o string
+	char_array = (char *)ft_calloc(num_elements, ch_ele_size);
+	if (char_array)
+	{
+		i = 0;
+		// Imprimir los ellementos de un array tipo char
+		printf("Array de caracteres despues de ft_calloc:\n");
+		while (i < num_elements)
+		{
+			printf("%d ", char_array[i]);
+			i++;
+		}
+		char_array[i] = '\0';
+		printf("\n");
+		
+		// Liberar la memoria asignada
+        free(char_array);
+
 	}
 	return (0);
 }*/

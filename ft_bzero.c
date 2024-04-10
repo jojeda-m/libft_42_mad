@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:36:33 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:40:33 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 12:02:54 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ void	ft_bzero(void *s, size_t n)
 
 /*int main(void) 
 {
+	printf("Test ft_bzero \n");
 	// Inicializamos un buffer de caracteres
-	char buffer[10] = "Testing";
+	char buffer[20] = "Testing ft_bzero";
 	// Número de bytes a establecer a cero
 	size_t n = 5;
 	// Imprimimos el buffer antes de aplicar ft_bzero
@@ -37,6 +38,17 @@ void	ft_bzero(void *s, size_t n)
 	ft_bzero(buffer, n);
 	// Imprimimos el buffer después de aplicar ft_bzero
 	printf("Buffer después de ft_bzero: %s\n", buffer);
+	printf("Test bzero original \n");
+	// Inicializamos un buffer de caracteres
+    char buffer1[20] = "Testing bzero";
+    // Número de bytes a establecer a cero
+    size_t n1 = 5;
+    // Imprimimos el buffer antes de aplicar bzero
+    printf("Buffer antes de bzero: %s\n", buffer1);
+    // Llamamos a la función bzero
+    bzero(buffer1, n1);
+    // Imprimimos el buffer después de aplicar bzero
+    printf("Buffer después de bzero: %s\n", buffer1);
 	return (0);
 }*/
 

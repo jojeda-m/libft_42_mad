@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:03:11 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:51:34 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:08:58 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,19 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	size_dst;
-	size_t	size_src;
-	size_t	size_dst_initial;
+	size_t	len_d;
+	size_t	len_s;
+	size_t	len_ini_d;
 
-	size_dst = ft_strlen(dst);
-	size_dst_initial = ft_strlen(dst);
-	size_src = 0;
-	if (dstsize <= size_dst)
+	len_d = ft_strlen(dst);
+	len_s = 0;
+	if (dstsize <= len_d)
 		return (ft_strlen(src) + dstsize);
-	while (size_dst < dstsize - 1 && src[size_src] != '\0')
-	{
-		dst[size_dst] = src[size_src];
-		size_dst++;
-		size_src++;
-	}
-	dst[size_dst] = '\0';
-	return (ft_strlen(src) + size_dst_initial);
+	len_ini_d = len_d;
+	while (len_d < dstsize - 1 && src[len_s] != '\0')
+		dst[len_d++] = src[len_s++];
+	dst[len_d] = '\0';
+	return (ft_strlen(src) + len_ini_d);
 }
 
 /*int	main(void)
