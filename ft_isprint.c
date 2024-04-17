@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:45:09 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:44:23 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:52:32 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,27 @@ int	ft_isprint(int c)
 
 /*int	main(void)
 {
-	int caracteres[] = {32, 126, 127, 31, 'A', '\t'};
-	int i = 0;
-
-	// Calculamos el tamaño del arreglo dividiendo el tamaño total del arreglo
-	// // por el tamaño de un elemento del arreglo
-	int	tamano = sizeof(caracteres) / sizeof(caracteres[0]);
-	// Iteramos sobre los elementos del arreglo utilizando un bucle while
-	while (i < tamano)
+	char	caracteres[] = {'\n', '5', '\0', '9', '\t', '&', '*'};
+	int		i = 0;
+	int		len = sizeof(caracteres) / sizeof(caracteres[i]);
+	
+	printf("Implementación propia ft_isprint:\n");
+	while (i < len)
 	{
 		if (ft_isprint(caracteres[i]))
-		{
-			printf("%d es un carácter imprimible.\n", caracteres[i]);
-		}
+			printf("%c es un caracter imprimible.\n", caracteres[i]);
 		else
-		{
-			printf("%d no es un carácter imprimible.\n", caracteres[i]);
-		}
+			printf("%c no es un caracter imprimible.\n", caracteres[i]);
+		i++;
+	}
+	printf("Implementación isprint original:\n");
+	i = 0;
+    while (i < len)
+	{
+		if (isprint(caracteres[i]))
+			printf("%c es un caracter imprimible.\n", caracteres[i]);
+		else
+			printf("%c no es un caracter imprimible.\n", caracteres[i]);
 		i++;
 	}
 	return (0);

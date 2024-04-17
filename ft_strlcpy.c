@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 12:00:27 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/05 08:15:59 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:58:07 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,25 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst_len = dstsize - 1;
 	if (dstsize == 0)
 		return (src_len);
-	while (*src != '\0' && dst_len > 0)
-	{
-		*dst = *src;
-		src++;
-		dst++;
-		dst_len--;
-	}
+	while (*src && dst_len-- > 0)
+		*dst++ = *src++;
 	*dst = '\0';
 	return (src_len);
 }
 
 /*int	main(void)
 {
-	// Definir búfer de destino y búfer de origen
-	char dst[20]; // Tamaño suficiente para contener la cadena copiada
-	const char *src = "Hello, world!!!!!!!";
+	const char	*src = "Hello, world!!!!!!!";
+	char		dst[10];
+	size_t		copied_len;
 	
-	// Copiar cadena usando ft_strlcpy
-	size_t copied_len = ft_strlcpy(dst, src, sizeof(dst));
-	
-	// Imprimir la cadena copiada y la longitud
+	copied_len = ft_strlcpy(dst, src, sizeof(dst));
+	printf("Implementación propia ft_strlcpy:\n");
+	printf("Cadena copiada: %s\n", dst);
+	printf("Longitud de la cadena copiada: %zu\n", copied_len);
+
+	printf("Función strlcpy original:\n");
+	copied_len = strlcpy(dst, src, sizeof(dst));
 	printf("Cadena copiada: %s\n", dst);
 	printf("Longitud de la cadena copiada: %zu\n", copied_len);
 	return (0);

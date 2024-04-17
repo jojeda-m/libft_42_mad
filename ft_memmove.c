@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:06:01 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:47:00 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:27:51 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 /*int	main(void)
 {
 	char src[] = "Hello, world!";
-	char dst[20]; // Destino con espacio suficiente para la copia
+	char dst[sizeof(src)];
+	size_t	len;
+
+	len = ft_strlen(src) + 1;
+	ft_memmove(dst, src, len);
+	printf("Contenido de dst después de ft_memmove: %s\n", dst);
 	
-	ft_memmove(dst, src, ft_strlen(src) + 1); //Copia la cadena incluyendo '\0'
-	printf("Contenido de dst después de la copia: %s\n", dst);
+	memmove(dst, src, len);
+	printf("Contenido de dst después de memmove: %s\n", dst);
 	return (0);
 }*/
 

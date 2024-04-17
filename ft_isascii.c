@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:38:38 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:43:34 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:47:48 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,27 @@ int	ft_isascii(int c)
 
 /*int	main(void)
 {
-	char caracteres[] = {0, 127, 128, 'A', 'z', ' '};
-	unsigned int i = 0;
+	char	caracteres[] = {'\n', 'a', 128, '\0', '9', 'Z', 164, 42};
+	int		i = 0;
+	int		len = sizeof(caracteres) / sizeof(char);
 	
-	while (i < sizeof(caracteres) / sizeof(char))
+	printf("Implementación propia ft_isascii:\n");
+	while (i < len)
 	{
 		if (ft_isascii(caracteres[i]))
-		{
-			printf("%d es un carácter ASCII válido.\n", caracteres[i]);
-		}
+			printf("%c es un caracter ascii std.\n", caracteres[i]);
 		else
-		{
-			printf("%d no es un carácter ASCII válido.\n", caracteres[i]);
-		}
+			printf("%c no es un caracter ascii std.\n", caracteres[i]);
+		i++;
+	}
+	printf("Implementación isascii original:\n");
+	i = 0;
+    while (i < len)
+	{
+		if (isascii(caracteres[i]))
+			printf("%c es un caracter ascii std.\n", caracteres[i]);
+		else
+			printf("%c no es un caracter ascii  std.\n", caracteres[i]);
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 16:20:39 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/05 08:08:58 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:25:33 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,23 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (NULL);
 	ptr_src = (unsigned char *)src;
 	ptr_dst = (unsigned char *)dst;
-	while (n > 0)
-	{
+	while (n-- > 0)
 		*ptr_dst++ = *ptr_src++;
-		n--;
-	}
 	return (dst);
 }
 
 /*int	main(void)
 {
 	char src[] = "Hello, world!";
-	char dst[20]; // Destino con espacio suficiente para la copia
+	char dst[sizeof(src)];
+	size_t	len;
+
+	len = 5;
+	ft_memcpy(dst, src, len);
+	printf("Contenido de dst después de ft_memcpy: %s\n", dst);
 	
-	ft_memcpy(dst, src, 13); // Copiar 13 bytes
-	printf("Contenido de dst después de la copia: %s\n", dst);
+	memcpy(dst, src, len);
+	printf("Contenido de dst después de ftmemcpy: %s\n", dst);
 	return (0);
 }*/
 

@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:52:35 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/10 14:20:45 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:08:32 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*end_ptr;
 
 	ptr = malloc(count * size);
-	if (ptr != NULL)
+	if (!ptr)
+		return (NULL);
+	else
 	{
 		ini_ptr = (char *)ptr;
 		end_ptr = ini_ptr + (count * size);

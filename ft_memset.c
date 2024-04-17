@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 16:17:50 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:47:23 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:58:28 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int				i;
 	unsigned char	*memfill;
 
 	memfill = b;
-	i = 0;
-	while (len > 0)
-	{
-		memfill[i] = (char)c;
-		len--;
-		i++;
-	}
+	while (len-- > 0)
+		*memfill++ = (char)c;
 	return (b);
 }
 
 /*int	main(void)
 {
-	char buffer[20]; // Buffer para almacenar datos
+	char	buffer[20];
+	int		c;
+	int		cc;
 	
-	// Llenar el buffer con 'A' usando ft_memset
-	ft_memset(buffer, 'A', sizeof(buffer));
-	
-	// Imprimir el contenido del buffer para verificar
+	c = '*';
+	cc = '@';
+	printf("Bueffer antes de ft_memset y memset original: %s\n", buffer);
+
+	ft_memset(buffer, c, sizeof(buffer));
 	printf("Contenido del buffer después de ft_memset: %s\n", buffer);
+
+	memset(buffer, cc, sizeof(buffer));
+	printf("Contenido del buffer después de memset original: %s\n", buffer);
 	
 	return (0);
 }*/
