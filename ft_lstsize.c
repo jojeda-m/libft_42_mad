@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 12:47:51 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/08 11:37:30 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:05:43 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@ int	ft_lstsize(t_list *lst)
 
 /*int	main(void)
 {
-// Creamos los nodos utilizando ft_lstnew y les asignamos un valor de ejemplo
 	t_list *disco1 = ft_lstnew("Thriller");
 	t_list *disco2 = ft_lstnew("Back in Black");
 	t_list *disco3 = ft_lstnew("The Dark side of the Moon");
 	t_list *disco4 = ft_lstnew("The Bodyguard");
 	
-	// Conectamos manualmente los nodos
 	disco1->next = disco2;
 	disco2->next = disco3;
 	disco3->next = disco4;

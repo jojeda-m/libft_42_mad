@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:31:48 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/02 12:42:43 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 22:51:17 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,39 +34,32 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
-int main(void)
+int	main(void)
 {
-    // Creamos 3 nodos utilizando ft_lstnew y les asignamos un valor de ejemplo
-    t_list *disco1 = ft_lstnew("Thriller");
-    t_list *disco2 = ft_lstnew("Back in Black");
-    t_list *disco3 = ft_lstnew("The Dark side of the Moon");
+	t_list *disco1 = ft_lstnew("Thriller");
+	t_list *disco2 = ft_lstnew("Back in Black");
+	t_list *disco3 = ft_lstnew("The Dark side of the Moon");
 
-    // Creamos la lista enlazada y añadimos los discos uno por uno al frente
-    t_list *lista = disco1;
-    disco1->next = disco2;
-    disco2->next = disco3;
+	t_list *lista = disco1;
+	disco1->next = disco2;
+	disco2->next = disco3;
 
-    // Imprimimos la lista completa de discos antes de agregar el cuarto disco
-    printf("Lista antes de agregar el cuarto disco:\n");
-    print_list(lista);
+	printf("Lista antes de agregar el cuarto disco:\n");
+	print_list(lista);
 
-    // Creamos otro nodo utilizando ft_lstnew y le asignamos un valor de ejemplo
-    t_list *disco4 = ft_lstnew("The Bodyguard");
+	t_list *disco4 = ft_lstnew("The Bodyguard");
 
-    // Agregamos el cuarto disco al frente de la lista
-    ft_lstadd_front(&lista, disco4);
+	ft_lstadd_front(&lista, disco4);
 
-    // Imprimimos la lista completa de discos después de agregar el cuarto disco
-    printf("\nLista después de agregar el cuarto disco:\n");
-    print_list(lista);
+	printf("\nLista después de agregar el cuarto disco:\n");
+	print_list(lista);
 
-    // Liberamos la memoria de los nodos
-    free(disco1);
-    free(disco2);
-    free(disco3);
-    free(disco4);
-
-    return (0);
+	free(disco1);
+	free(disco2);
+	free(disco3);
+	free(disco4);
+	
+	return (0);
 }*/
 
 /*La función ft_lstadd_front agrega un nuevo nodo al frente de una lista
