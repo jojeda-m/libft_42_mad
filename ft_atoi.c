@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 12:08:01 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/10 11:50:07 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:40:51 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	ft_atoi(const char *str)
 
 /*int	main(void) 
 {
-	const	char *str1 = "   2147483647";
-	const	char *str2 = "   9999999999999999";
-	const	char *str3 = "   -2147483648";
+	const	char *str1 = ft_itoa(INT_MAX);
+	const	char *str2 = ft_itoa(INT_MIN);
+	const	char *str3 = "   +-99";
 	const	char *str4 = "   -9999999999999999"; 
 	
 	// Probando ft_atoi con diferentes cadenas de caracteres
