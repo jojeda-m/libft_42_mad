@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 19:32:20 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/10 16:56:31 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:19:49 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char		mem_c;
 	const unsigned char	*str;
 
-	mem_c = c;
+	mem_c = (unsigned char)c;
 	str = s;
 	i = 0;
 	while (i < n)
@@ -37,18 +37,22 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	void	*result;
 	
 	str = "Hello, world!";
-	search_char = 'w';
+	search_char = 300;
 	search_size = ft_strlen(str);
+	printf("\nImplementación propia ft_memchr:\n");
 	result = ft_memchr(str, search_char, search_size);
 	if (result != NULL)
-	{
-		printf("El caracter '%c' encontrado en la dirección de memoria: %p\n"
-		, search_char, result);
-	}
+		printf("El caracter '%c' encontrado en la dirección de memoria: %p\n", 
+				search_char, result);
 	else
-	{
 		printf("El caracter '%c' no encontrado.\n", search_char);
-	}
+	printf("\nImplementación de la función memchr original:\n");
+	result = memchr(str, search_char, search_size);
+	if (result != NULL)
+		printf("El caracter '%c' encontrado en la dirección de memoria: %p\n",
+				search_char, result);
+	else
+		printf("El caracter '%c' no encontrado.\n", search_char);
 	return (0);
 }*/
 

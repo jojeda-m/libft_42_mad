@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:24:39 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/05 08:19:02 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:02:36 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == ch)
-		{
 			last = (char *)s;
-		}
 		s++;
 	}
 	return (last);
@@ -34,19 +32,25 @@ char	*ft_strrchr(const char *s, int c)
 
 /*int	main(void)
 {
-	const char str[] = "Hello, world!";
-	int c = '\0';
-	char *result = ft_strrchr(str, c);
-	
+	const char	str[] = "Hello, wwworld!";
+	int			c = 'w';
+	char		*result;
+
+	printf("Implementación propia ft_strschr:\n");
+	result = ft_strrchr(str, c);
 	if (result != NULL)
-	{
-		printf("Última ocurrencia de '%c' encontrada en la 
-				posición: %ld\n", c, result - str);
-	}
+		printf("Última ocurrencia de '%c' encontrada en la posición: %ld\n",
+				c, result - str);
 	else
-	{
 		printf("'%c' no encontrado en '%s'\n", c, str);
-	}
+
+	printf("\nImplementación de la función strrchr original:\n");
+	result = strrchr(str, c);
+	if (result != NULL)
+		printf("Última ocurrencia de '%c' encontrada en la posición: %ld\n",
+				c, result - str);
+	else
+		printf("'%c' no encontrado en '%s'\n", c, str);
 	return (0);
 }*/
 
