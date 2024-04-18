@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:52:35 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/17 14:08:32 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:18:50 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,14 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
-	char	*ini_ptr;
-	char	*end_ptr;
 
+	if (size != 0 && count > SIZE_MAX / size)
+		return (NULL);
 	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
 	else
-	{
-		ini_ptr = (char *)ptr;
-		end_ptr = ini_ptr + (count * size);
-		while (ini_ptr < end_ptr)
-		{
-			*ini_ptr = 0;
-			ini_ptr++;
-		}
-	}
+		ft_bzero(ptr, count * size);
 	return (ptr);
 }
 
@@ -46,43 +38,58 @@ void	*ft_calloc(size_t count, size_t size)
 	num_elements = 5;
 	nb_ele_size = sizeof(int);
 	ch_ele_size = sizeof(char);
+	
+	printf("\nImplementación propia ft_calloc:\n");
 	int_array = (int *)ft_calloc(num_elements, nb_ele_size);
 	if (int_array != NULL)
 	{
 		i = 0;
-		// Imprimir los elementos del array de números
 		printf("Array de numeros después de ft_calloc:\n");
-		while (i < num_elements)
-		{
+		while (i++ < num_elements)
 			printf("%d ", int_array[i]);
-			i++;
-		}
 		printf("\n");
-		
-		// Liberar la memoria asignada
 		free(int_array);
-	} else
+	} 
+	else
 		printf("Error: la asignación de memoria ha fallado.\n");
 	
-	// Imprimir los elementos del array de caracteres o string
 	char_array = (char *)ft_calloc(num_elements, ch_ele_size);
 	if (char_array)
 	{
 		i = 0;
-		// Imprimir los ellementos de un array tipo char
 		printf("Array de caracteres despues de ft_calloc:\n");
-		while (i < num_elements)
-		{
+		while (i++ < num_elements)
 			printf("%d ", char_array[i]);
-			i++;
-		}
 		char_array[i] = '\0';
 		printf("\n");
-		
-		// Liberar la memoria asignada
         free(char_array);
-
 	}
+	
+	printf("\nImplementación de la función original calloc:\n");
+    int_array = (int *)calloc(num_elements, nb_ele_size);
+    if (int_array != NULL)
+    {
+        i = 0;
+        printf("Array de numeros después de calloc:\n");
+        while (i++ < num_elements)
+            printf("%d ", int_array[i]);
+        printf("\n");
+        free(int_array);
+    }
+    else
+        printf("Error: la asignación de memoria ha fallado.\n");
+
+    char_array = (char *)calloc(num_elements, ch_ele_size);
+    if (char_array)
+    {
+        i = 0;
+        printf("Array de caracteres despues de calloc:\n");
+        while (i++ < num_elements)
+            printf("%d ", char_array[i]);
+        char_array[i] = '\0';
+        printf("\n");
+        free(char_array);
+    }
 	return (0);
 }*/
 
