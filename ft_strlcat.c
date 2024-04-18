@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:03:11 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/10 18:08:58 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:40:56 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,54 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	len_d;
-	size_t	len_s;
-	size_t	len_ini_d;
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	orig_dst;
 
-	len_d = ft_strlen(dst);
-	len_s = 0;
-	if (dstsize <= len_d)
+	len_dst = ft_strlen(dst);
+	len_src = 0;
+	if (dstsize <= len_dst)
 		return (ft_strlen(src) + dstsize);
-	len_ini_d = len_d;
-	while (len_d < dstsize - 1 && src[len_s] != '\0')
-		dst[len_d++] = src[len_s++];
-	dst[len_d] = '\0';
-	return (ft_strlen(src) + len_ini_d);
+	orig_dst = len_dst;
+	while (len_dst < dstsize - 1 && src[len_src] != '\0')
+		dst[len_dst++] = src[len_src++];
+	dst[len_dst] = '\0';
+	return (ft_strlen(src) + orig_dst);
 }
 
 /*int	main(void)
 {
-	char dst[20] = "Hello, ";
-	const char src[] = "world!";
-	size_t dstsize = sizeof(dst);
+	char		dst[20];
+	char		*dst_value;
+	const char 	*src;
+	size_t 		dstsize;
+	size_t		result;
+
+	dst_value = "Hello ";
+	ft_strlcpy(dst, dst_value, ft_strlen(dst_value) + 1);
+	src = "World!!!";
+	dstsize = sizeof(dst);
 	
+	printf("Implementación propia ft_strlcat:\n");
 	printf("Cadena de destino antes de ft_strlcat: %s\n", dst);
 	printf("Longitud de la cadena de destino antes de ft_strlcat: %zu\n", 
 			ft_strlen(dst));
-	
-	size_t result = ft_strlcat(dst, src, dstsize);
+	result = ft_strlcat(dst, src, dstsize);
 	printf("Cadena de destino después de ft_strlcat: %s\n", dst);
 	printf("Longitud de la cadena de destino después de ft_strlcat: %zu\n", 
 			ft_strlen(dst));
-	printf("Valor devuelto por ft_strlcat: %zu\n", result);
+	printf("Valor devuelto por ft_strlcat: %zu\n\n", result);
+
+	printf("Implementación función original strlcat:\n");
+	ft_strlcpy(dst, dst_value, ft_strlen(dst_value) + 1);
+	printf("Cadena de destino antes de strlcat: %s\n", dst);
+	printf("Longitud de la cadena de destino antes de strlcat: %zu\n", 
+			ft_strlen(dst));
+	result = strlcat(dst, src, dstsize);
+	printf("Cadena de destino después de strlcat: %s\n", dst);
+	printf("Longitud de la cadena de destino después de strlcat: %zu\n", 
+			ft_strlen(dst));
+	printf("Valor devuelto por strlcat: %zu\n", result);
 	return (0);
 }*/
 

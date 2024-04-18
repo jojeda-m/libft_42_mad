@@ -6,13 +6,14 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:31:57 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:42:58 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:10:24 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <ctype.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
