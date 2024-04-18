@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:41:03 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:49:27 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:03:37 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,24 +84,36 @@ char	**ft_split(char const *s, char c)
 
 /*int	main(void)
 {
-	char const *s = "   Hello World, This is a Test  ";
-	char **words = ft_split(s, ' ');
+	char const	*s;
+	char		c;
+	size_t		elements;
+	char		**result;
+	size_t		i;
 
-	if (words) {
-        // Imprime las palabras divididas
-	size_t	i = 0;
-	while (words[i] != NULL)
+	s = "    Hello World, This is a split Test  ";
+	c = ' ';
+	elements = ft_count_words(s, c);
+	printf("\nNúmero de elementos encontrados: %zu\n", elements);
+
+	result = ft_split(s, c);
+	if (!result)
 	{
-		printf("Word %zu: %s\n", i, words[i]);
-		free(words[i]); // Liberamos la memoria de cada palabra
+		printf("No se pudieron obtener los elementos o palabras\n");
+		return (1);
+	}
+	i = 0;
+	while (result[i] != NULL)
+	{
+		printf("Palabra encontrada %lu: %s\n", i + 1, result[i]);
 		i++;
 	}
-	free(words); // Liberamos la memoria del arreglo de palabras
-	}
-	else
+	i = 0;
+	while (result[i] != NULL)
 	{
-	printf("Error: No se pudo dividir la cadena\n");
+		free(result[i]);
+		i++;
 	}
+	free(result);
 	return (0);
 }*/
 

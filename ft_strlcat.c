@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:03:11 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/17 19:40:56 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:15:15 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t 		dstsize;
 	size_t		result;
 
-	dst_value = "Hello ";
-	ft_strlcpy(dst, dst_value, ft_strlen(dst_value) + 1);
+	dst_value = NULL;
 	src = "World!!!";
-	dstsize = sizeof(dst);
+	dstsize = 0;
 	
 	printf("Implementación propia ft_strlcat:\n");
 	printf("Cadena de destino antes de ft_strlcat: %s\n", dst);
@@ -53,7 +52,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	printf("Valor devuelto por ft_strlcat: %zu\n\n", result);
 
 	printf("Implementación función original strlcat:\n");
-	ft_strlcpy(dst, dst_value, ft_strlen(dst_value) + 1);
 	printf("Cadena de destino antes de strlcat: %s\n", dst);
 	printf("Longitud de la cadena de destino antes de strlcat: %zu\n", 
 			ft_strlen(dst));

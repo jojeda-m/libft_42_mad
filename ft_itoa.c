@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:13:53 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/10 14:56:34 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:16:59 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ char	*ft_itoa(int n)
 	return (result);
 }
 
-/*int main(void)
+/*int	main(void)
 {
-    int n = INT_MIN;
+    int n = '\0';
     int length = ft_length(n);
     char *result = ft_itoa(n);
 

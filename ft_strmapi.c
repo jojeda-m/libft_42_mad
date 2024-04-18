@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:14:21 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:52:55 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:57:27 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,27 +49,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
-/*int main(void)
+/*int	main(void)
 {
-    // Cadena de entrada
-    const char *input = "AbCdEfGhIjKl";
+    const char	*input = "AbCdEfGhIjKl";
+	char		*result;
 
-    printf("Input:  %s\n", input);
-    // Llamada a ft_strmapi con ft_example
-    char *result = ft_strmapi(input, ft_example);
-
-    // Imprimir el resultado
-    if (result != NULL)
-    {
-        printf("Output: %s\n", result);
-        free(result); // Liberar la memoria asignada
-    }
-    else
-    {
-        printf("Error: No se pudo asignar memoria.\n");
-    }
-
-    return 0;
+	printf("Input:  %s\n", input);
+	result = ft_strmapi(input, ft_example);
+	if (result)
+	{
+		printf("Output: %s\n", result);
+		free(result);
+	}
+	else
+		printf("Error: No se pudo asignar memoria.\n");
+	return (0);
 }*/
 
 /*La función ft_strmapi toma una cadena de caracteres s y una función f como

@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:02:15 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/03/27 13:51:14 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:42:10 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		i;
+	size_t	i;
+	size_t	total_len;
 
-	str = malloc((ft_strlen(s1)) + (ft_strlen(s2)) + 1);
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc(total_len + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -38,15 +40,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 /*int	main(void)
 {
-	const char 	*s1 = "Hello, ";
-	const char 	*s2 = "world!";
-	char 		*result = ft_strjoin(s1, s2);
+	const char	*s1 = "Hello, ";
+	const char	*s2 = "world!";
+	char		*result;
+   
+	result = ft_strjoin(s1, s2);
 
     if (result == NULL)
 	{
 		printf("Error: No se pudo concatenar las cadenas.\n");
 		return (1);
 	}
+	printf("\nCadena 1: %s\n", s1);
+	printf("Cadena 2: %s\n", s2);
 	printf("La cadena concatenada es: %s\n", result);
 	free(result); // Liberamos la memoria asignada
 	return (0);

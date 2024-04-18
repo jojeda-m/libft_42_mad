@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:03:13 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/05 08:20:00 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:15:49 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*int	main(void)
 {
 	char			cadena[] = "Esto es una cadena de ejemplo";
-	unsigned int	start = 8; // Comenzar desde el índice 8
-	size_t			len = 10; // Longitud de la subcadena
-
-    char *subcadena = ft_substr(cadena, start, len);
+	unsigned int	start = 8;
+	size_t			len = 10;
+   	char 			*subcadena;
+	
+	subcadena = ft_substr(cadena, start, len);
 
 	if (subcadena == NULL)
 	{
 		printf("Error: No se pudo crear la subcadena.\n");
 		return (1);
 	}
+	printf("\nCadena original: %s\n", cadena);
+	printf("Posición en la cadena original dende comienza la subcadena: %d\n",
+		   start);	
 	printf("Subcadena: %s\n", subcadena);
+	printf("Cantidad de caracteres copiados: %zu\n", ft_strlen(subcadena));
 	
-	// Liberar la memoria asignada a la subcadena
 	free(subcadena);
 	return (0);
 }*/
