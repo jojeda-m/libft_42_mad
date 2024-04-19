@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:00:19 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/08 13:44:27 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:10:00 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,39 +20,39 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	{
 		temp = lst;
 		del(temp->content);
-		lst = lst -> next;
+		lst = lst->next;
 		free(temp);
 	}
 }
 
-/*int main(void)
+/*int	main(void)
 {
-    // Creamos un nodo utilizando ft_lstnew
-    t_list *disco = ft_lstnew("Thriller");
+	t_list	*disco1 = ft_lstnew("Thriller");
+	t_list	*disco2 = ft_lstnew("Back in Black");
+	t_list	*disco3 = ft_lstnew("The Dark side of the Moon");
+	t_list	*disco4 = ft_lstnew("The Bodyguard");
+	t_list	*current;
+	
+	disco1->next = disco2;
+	disco2->next = disco3;
+	disco3->next = disco4;
 
-    // Verificamos si el nodo fue creado correctamente
-    if (disco)
-    {
-        printf("Contenido del nodo antes de eliminar: %s\n", 
-		(char *)disco->content);
+	printf("Lista completa antes de eliminar el primer nodo:\n");
+	current = disco1;
+	while (current != NULL)
+	{
+		printf("%s\n", (char *)current->content);
+		current = current->next;
+	}
 
-        // Llamamos a ft_lstdelone para eliminar el nodo
-        ft_lstdelone(disco, &free);
+	ft_lstdelone(disco4, &free);
 
-        // Verificamos si el nodo fue eliminado correctamente
-        if (disco == NULL)
-        {
-            printf("Nodo eliminado correctamente\n");
-        }
-        else
-        {
-            printf("Error al eliminar el nodo\n");
-        }
-    }
-    else
-    {
-        printf("Error al crear el nodo\n");
-    }
-
-    return (0);
+	printf("Lista completa después de eliminar el primer nodo:\n");
+	current = disco2;
+	while (current != NULL)
+	{
+		printf("%s\n", (char *)current->content);
+		current = current->next;
+	}
+	return (0);
 }*/
