@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:16:16 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/18 18:24:35 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:49:33 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,3 @@ void	ft_putnbr_fd(int n, int fd)
 	while (i > 0)
 		write(fd, &str[--i], 1);
 }
-
-/*int	main(void)
-{
-	int	n;
-	int	fd;
-
-	n = 0;
-	fd = 1;
-	ft_putnbr_fd(n, fd);
-	return (0);
-}*/
-
-/*La función ft_putnbr_fd toma un entero n y un descriptor de archivo fd, y
-escribe la representación de cadena del entero en el descriptor de archivo dado.
-Si n es igual a -2147483648, escribe "-2147483648". Si n es igual a 0, escribe
-"0". En otros casos, convierte el entero en una cadena de caracteres y la
-escribe en el descriptor de archivo. Si el entero es negativo, precede la cadena
-con un signo "-" antes de escribirlo.*/

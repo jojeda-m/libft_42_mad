@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 10:29:19 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/18 10:05:00 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:24:30 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
-
-/*int	main(void)
-{
-	const char	*str1;
-	const char	*str2;
-	size_t		n;
-	int 		result;
-	
-	str1 = "Hello, world!";
-	str2 = "Hello, mundo!";
-	n = 9;
-	printf("Implementación propia ft_strncmp:\n");
-	result = ft_strncmp(str1, str2, n);
-	if (result < 0)
-		printf("'%.*s' es menor que '%.*s'\n", (int)n, str1, (int)n, str2);
-	else if (result > 0)
-		printf("'%.*s' es mayor que '%.*s'\n", (int)n, str1, (int)n, str2);
-	else
-		printf("'%.*s' es igual a '%.*s'\n", (int)n, str1, (int)n, str2);
-	
-	printf("\nImplementación propia ft_strncmp:\n");
-    result = strncmp(str1, str2, n);
-    if (result < 0)
-        printf("'%.*s' es menor que '%.*s'\n", (int)n, str1, (int)n, str2);
-    else if (result > 0)
-        printf("'%.*s' es mayor que '%.*s'\n", (int)n, str1, (int)n, str2);
-    else
-        printf("'%.*s' es igual a '%.*s'\n", (int)n, str1, (int)n, str2);
-	return (0);
-}*/
-
-/*La función ft_strncmp compara n caracteres de las cadenas s1 y s2 y devuelve
-un valor entero que indica la relación entre ellas. Si s1 es menor que s2,
-devuelve un valor negativo; si son iguales, devuelve 0; y si s1 es mayor que s2,
-devuelve un valor positivo.*/

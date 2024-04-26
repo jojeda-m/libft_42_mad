@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:41:03 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/18 16:03:37 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:45:12 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,51 +81,3 @@ char	**ft_split(char const *s, char c)
 	result[i] = NULL;
 	return (result);
 }
-
-/*int	main(void)
-{
-	char const	*s;
-	char		c;
-	size_t		elements;
-	char		**result;
-	size_t		i;
-
-	s = "    Hello World, This is a split Test  ";
-	c = ' ';
-	elements = ft_count_words(s, c);
-	printf("\nNúmero de elementos encontrados: %zu\n", elements);
-
-	result = ft_split(s, c);
-	if (!result)
-	{
-		printf("No se pudieron obtener los elementos o palabras\n");
-		return (1);
-	}
-	i = 0;
-	while (result[i] != NULL)
-	{
-		printf("Palabra encontrada %lu: %s\n", i + 1, result[i]);
-		i++;
-	}
-	i = 0;
-	while (result[i] != NULL)
-	{
-		free(result[i]);
-		i++;
-	}
-	free(result);
-	return (0);
-}*/
-
-/* La función ft_split toma una cadena de caracteres (s) y un carácter
-delimitador (c) como entrada. Divide la cadena en palabras separadas por el
-delimitador y devuelve un arreglo de punteros a caracteres, donde cada puntero
-apunta a una palabra.
-La función cuenta inicialmente el número de palabras en la cadena utilizando
-ft_count_words, luego asigna memoria para un arreglo de punteros a caracteres.
-Luego, utiliza un bucle para llamar a ft_next_word para cada palabra,
-almacenando cada palabra en una entrada del arreglo. Si ocurre un error durante
-la asignación de memoria para una palabra, la función libera la memoria asignada
-previamente antes de devolver NULL.
-En resumen, ft_split divide una cadena en palabras utilizando un carácter
-delimitador y devuelve un arreglo de punteros a estas palabras.*/

@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:46:07 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/18 15:05:13 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:44:28 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = ft_substr(s1, i, (j - i) + 1);
 	return (result);
 }
-
-/*int	main(void)
-{
-	const char *s1;
-	const char *set;
-	char *result;
-	
-	s1 = "abcdefghijklmnopqrstvwyaz";
-	set = "aczy";
-	result = ft_strtrim(s1, set);
-	if (result == NULL)
-	{
-		printf("Error: No se pudo realizar el trim de la cadena.\n");
-        return (1);
-	}
-	printf("\nCadena original: \"%s\"\n", s1);
-	printf("Caracteres a eliminar:%s\n", set);
-	printf("Cadena trimmada: \"%s\"\n", result);
-	free(result);
-	return (0);
-}*/
-
-/*La funcion ft_strtrim, elimina todos los caracteres de la string ’set’ desde
-el principio y desde el final de ’s1’, hasta encontrar un caracter no 
-perteneciente a ’set’. La string resultante se devuelve con una reserva 
-de malloc(3)*/

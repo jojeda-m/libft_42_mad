@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 16:20:39 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/17 14:25:33 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:17:42 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*ptr_dst++ = *ptr_src++;
 	return (dst);
 }
-
-/*int	main(void)
-{
-	char src[] = "Hello, world!";
-	char dst[sizeof(src)];
-	size_t	len;
-
-	len = 5;
-	ft_memcpy(dst, src, len);
-	printf("Contenido de dst después de ft_memcpy: %s\n", dst);
-	
-	memcpy(dst, src, len);
-	printf("Contenido de dst después de ftmemcpy: %s\n", dst);
-	return (0);
-}*/
-
-/*La función proporciona una implementación básica de memcpy, copiando un bloque
-de memoria desde una ubicación de origen a una ubicación de destino y 
-devolviendo el puntero de destino original.*/
