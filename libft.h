@@ -6,7 +6,7 @@
 /*   By: jojeda-m <jojeda-m@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:31:57 by jojeda-m          #+#    #+#             */
-/*   Updated: 2024/04/17 20:10:24 by jojeda-m         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:26:55 by jojeda-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <limits.h>
+# include <stdint.h>
 
 // Parte obligatoria 1. Implementación personalizada de funciones standard de C
 int		ft_isalpha(int c);
